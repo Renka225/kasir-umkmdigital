@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard UMKM Premium</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="sidebar">
+    <div class="brand">
+        <h2>UMKM<span>Pro</span></h2>
+    </div>
+
+    <nav>
+        <button class="nav-btn active" data-page="dashboard">Dashboard</button>
+        <button class="nav-btn" data-page="produk">Produk</button>
+        <button class="nav-btn" data-page="transaksi">Transaksi</button>
+        <button class="nav-btn" data-page="riwayat">Riwayat</button>
+        <button class="nav-btn" data-page="pelanggan">Pelanggan</button>
+        <button class="nav-btn" data-page="laporan">Laporan</button>
+    </nav>
+
+    <div class="sidebar-footer">
+        <small>Offline System • LocalStorage</small>
+    </div>
+</div>
+
+<div class="main">
+
+    <div class="topbar">
+        <h1 id="pageTitle">Dashboard</h1>
+
+        <div class="topbar-actions">
+            <input type="date" id="dateFilter">
+            <button id="exportCSV">Export CSV</button>
+            <button id="closeDay">Tutup Hari</button>
+        </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <section class="page active" id="dashboard">
+        <div class="stats-grid">
+
+            <div class="card">
+                <h3>Total Penjualan</h3>
+                <p id="totalPenjualan">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Jumlah Transaksi</h3>
+                <p id="totalTransaksi">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Produk Terlaris</h3>
+                <p id="produkTerlaris">-</p>
+            </div>
+
+            <div class="card">
+                <h3>Top Pelanggan</h3>
+                <p id="topPelanggan">-</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PRODUK -->
+    <section class="page" id="produk">
+        <h2>Manajemen Produk</h2>
+
+        <div class="form-box">
+            <input type="text" id="namaProduk" placeholder="Nama produk">
+            <input type="number" id="hargaProduk" placeholder="Harga">
+            <button id="addProduk">Tambah</button>
+        </div>
+
+        <div class="list" id="listProduk"></div>
+    </section>
+
+    <!-- TRANSAKSI (SIMPLIFIED TANPA KERANJANG) -->
+    <section class="page" id="transaksi">
+        <h2>Transaksi</h2>
+
+        <div class="form-box">
+            <input type="text" id="namaPelanggan" placeholder="Nama pelanggan">
+            <input type="number" id="bayar" placeholder="Uang bayar">
+            <button id="checkoutBtn">Checkout</button>
+        </div>
+
+        <h3>Pilih Produk</h3>
+        <div class="produk-list" id="produkList"></div>
+    </section>
+
+    <!-- RIWAYAT -->
+    <section class="page" id="riwayat">
+        <h2>Riwayat Transaksi</h2>
+        <div id="riwayatList"></div>
+    </section>
+
+    <!-- PELANGGAN -->
+    <section class="page" id="pelanggan">
+        <h2>Ranking Pelanggan</h2>
+        <div id="rankingPelanggan"></div>
+    </section>
+
+    <!-- LAPORAN -->
+    <section class="page" id="laporan">
+        <h2>Laporan Harian</h2>
+        <div id="laporanBox"></div>
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
